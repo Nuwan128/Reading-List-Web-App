@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="content">
+        <div id="main">
+            <h2 id="heading">BOOK LIST</h2>
+            <p id="p1">“Think before you speak. Read before you think.” - Fran Lebowitz</p>
+            <form action="" id="search">
+                <input type="text" id="search-box" placeholder="Search books...">
+            </form>
+        </div>
+        <div id="inner-content">
+            <h2>Books to Read...</h2>
+            <ul id="book-list">
+                <!-- <li class="item">
+                    <p>Name of the wind</p>
+                    <button class="btn delete">delete</button>
+                </li>      -->
+            </ul>
+            <input type="checkbox" id="ch-box">
+            <label for="ch-box" id="ch-box-lbl">Hide All Books</label>
+            <form action="" id="addfrm"><input type="text" id="add-book-box" required placeholder="Add a book...">
+                <button class="btn add" id="btn-add" >Add</button>
+            </form>
+            
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

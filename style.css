@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
+ :root{
+    --shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+    --greay:rgb(222, 221, 221);
+    --heighlite:linear-gradient(60deg, rgb(51, 114, 135), rgb(202, 0, 253));
+} 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+#content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    /* height: 600px; */
+    width: 500px;
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+}
+#main{
+    height: 140px;
+    background: var(--heighlite);
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    color: white;
+}
+
+#heading,#p1 {
+    padding-top: 10px;
+}
+
+#p1{
+    margin-bottom: 15px;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+#search-box{
+    border: none;
+    width: 300px;
+    padding: 5px;
+    
+}
+
+#inner-content h2{
+    padding: 20px 0 0 15px;
+    font-weight: 500;
+}
+
+#book-list{
+    padding: 20px;
+}
+.item{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px ;
+    border-left: 3px solid var(--greay);
+    margin-bottom: 10px;
+    
+}
+
+.item:hover{
+    border-color:rgb(202, 0, 253);
+}
+
+#addfrm{
+    text-align: center;
+    margin-bottom: 40px;
+}
+#add-book-box{
+    width: 300px;
+    padding: 5px;
+    border: 2px  solid rgb(222, 221, 221);
+    border-right: none;
+}
+
+.btn{
+    padding: 5px;
+    background:var(--heighlite);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.add{
+    height: 37px;
+    width: 60px;
+    border: 2px  solid var(--greay);
+    border-left: none;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+#inner-content{
+    text-align: center;
+}
+
+#ch-box,#ch-box-lbl{
+    margin-bottom: 15px;
+    
+    
+}
+
+#ch-box-lbl{
+    font-weight:lighter;
+    margin-left: 0px;
+}
