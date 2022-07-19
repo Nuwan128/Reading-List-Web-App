@@ -6,6 +6,7 @@ const btnAdd = document.getElementById('btn-add');
 const addTxtBox = document.getElementById('add-book-box');
 const searchBox = document.getElementById('search-box');
 const cheakBox = document.getElementById('ch-box');
+const books = list.getElementsByTagName('li');
 
 
 
@@ -33,10 +34,8 @@ function deleteBook(e){
 function addBook(e){
 
     e.preventDefault();
-
     if(addTxtBox.value == ' '){
-        alert('please enter valid');
-        console.log(addTxtBox.value);
+        alert('Do not enter space as first element');
     }
     else{
         const li = document.createElement('li');
@@ -52,22 +51,16 @@ function addBook(e){
         li.appendChild(btn);
         list.appendChild(li);
     }
-
-
-    
-
-    
     addTxtBox.value = '';
-    
-    
 }
+
 
 //--search book--
 function searchBook(e){
 
-    const value = e.target.value.toLowerCase();
-    const books = list.getElementsByTagName('li');
 
+    e.preventDefault();
+    const value = e.target.value.toLowerCase();
     Array.from(books).forEach(function(book){
         const title = book.firstElementChild.textContent;
         if(title.toLowerCase().indexOf(value) != -1){
@@ -91,3 +84,15 @@ function hideBooks(e){
         list.style.display = '';
     }
 }
+
+//--all rady having book
+// function isHaving(){
+//     Array.from(books).forEach(function(book){
+//         const title = book.firstElementChild.textContent;
+//         if(addTxtBox.value.toLowerCase() == title.toLowerCase()){
+//             alert("All ready existing this book!");
+            
+//         }
+//     });
+// }
+
