@@ -7,6 +7,7 @@ const addTxtBox = document.getElementById('add-book-box');
 const searchBox = document.getElementById('search-box');
 const cheakBox = document.getElementById('ch-box');
 const books = list.getElementsByTagName('li');
+var having;
 
 
 
@@ -34,22 +35,16 @@ function deleteBook(e){
 function addBook(e){
 
     e.preventDefault();
+   
+
+    // console.log(e.target.firstElementChild.value.toLowerCase());
     if(addTxtBox.value == ' '){
         alert('Do not enter space as first element');
     }
     else{
-        const li = document.createElement('li');
-        const p = document.createElement('p');
-        const btn = document.createElement('button');
-
-        li.className = 'item';
-        p.textContent = addTxtBox.value;
-        btn.className ='btn delete';
-        btn.innerText ='delete';
-
-        li.appendChild(p);
-        li.appendChild(btn);
-        list.appendChild(li);
+       
+        isHaving();
+        // list.appendChild(li);
     }
     addTxtBox.value = '';
 }
@@ -85,14 +80,71 @@ function hideBooks(e){
     }
 }
 
-//--all rady having book
-// function isHaving(){
-//     Array.from(books).forEach(function(book){
-//         const title = book.firstElementChild.textContent;
-//         if(addTxtBox.value.toLowerCase() == title.toLowerCase()){
-//             alert("All ready existing this book!");
+//--all ready having book
+function isHaving(){
+    const li = document.createElement('li');
+    const p = document.createElement('p');
+    const btn = document.createElement('button');
+
+    li.className = 'item';
+    p.textContent = addTxtBox.value;
+    btn.className ='btn delete';
+    btn.innerText ='delete';
+
+    li.appendChild(p);
+    li.appendChild(btn);
+    
+
+        const arrBooks = Array.from(books);
+       
+        if(arrBooks.length >=0){
+            // arrBooks.forEach(function(book){
+                
+            //     // const title = book.firstElementChild.textContent;
+            //     // console.log("title is",title)
+            //     // if(addTxtBox.value.toLowerCase() == title.toLowerCase()){
+                    
+            //     //     alert("All ready existing this book!");
+            //     //     // list.appendChild(li);
+                 
+                    
+            //     // }
+                
+            //     // else{
+        
+            //     //     list.appendChild(li);
+            //     //     console.log(++counnt,title)
+            //     //     return true;
+                
+            //     // }
+                
+                
+
+
+            // });
+            let count = 0;
+            for(let i = 0; i < arrBooks.length; i++){
+                const title = arrBooks[i].firstElementChild.textContent;
+                console.log(title)
+                if(addTxtBox.value.toLowerCase() == title.toLowerCase()){
+                    alert("All ready existing this book!");
+                    break;
+                  
+                }
+                else{
+                    ++count
+                }
             
-//         }
-//     });
-// }
+              }
+              if(count == arrBooks.length){
+                list.appendChild(li);
+                console.log('dsdsdsdsdsd')
+              }
+           
+        
+        
+      
+    }
+   
+}
 
